@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>success</title>
+<style type="text/css">
+
+form {
+	font-size: 40px;
+	background-repeat: repeat;
+	font-family: "华文新魏";
+	text-align: center;
+}
+#s1 {
+	font-size: 20px;
+	height: 32px;
+	width: 100px;
+	float: none;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-top-color: #FF9;
+	border-right-color: #FF9;
+	border-bottom-color: #FF9;
+	border-left-color: #FF9;
+	background-color: #FFC;
+	text-align: center;
+}
+body {
+	background-image: url(usedpicture.jpeg);
+}
+p1 {
+	font-size: 20px;
+}
+#p2 {
+	font-size: 20px;
+}
+p2 {
+	font-size: 30px;
+}
+</style>
+</head>
+
+<body>
+<form method='post'>{% csrf_token%}    
+  <p>{{uName}} </p>
+  <p>恭喜您！</p>
+  <p> 注册成功。 </p>
+  <p1>欢迎您加入“读书同盟”，我们将在这里和您一起享受阅读。
+  </p1>
+  <p2>现在让我们开始阅读之旅吧！
+  </p2>
+  
+  <p>
+    <input type="submit" id="s1" value="点此登录">
+  </p>
+</form>
+
+</body>
+</html>
