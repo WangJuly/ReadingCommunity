@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>读书笔记上传界面</title>
+</head>
+
+<body>
+<form name="upload" id="p2" action="/getArticle" method="get">
+  <p size=40>笔记标题：
+  <input type="text" name="atitle" size=20 maxlength="30">
+  </p>
+  <p size=40>书籍名称：
+  <input type="text" name="abookname" size=20 maxlength="30">
+  </p> 
+  <p size=40>书籍作者：
+  <input type="text" name="awriter" size=20 maxlength="30">
+  </p>
+  <br>
+
+  <p size=40>笔记上传：</p>
+  <textarea rows="10" cols="100" name="acontent" required placeholder="请直接输入正文">
+  </textarea>
+  <br>
+  <br>
+
+  <input type="submit" name="submit" value="提  交" class=button />
+  
+  
+  
+</form>
+</body>
+</html>

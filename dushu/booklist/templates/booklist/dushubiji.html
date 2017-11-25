@@ -1,0 +1,100 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册页面</title>
+
+<style type="text/css">
+strong {
+	font-size: 24px;
+}
+h1 {
+	font-family:"幼圆";
+	font-weight: bold;
+	text-align:center
+	
+}
+form {
+	border-style: groove;
+	color: black;
+	font-family: "楷体";
+	font-size: 26px;
+	font-weight: normal;
+	text-decoration: blink;
+	height: auto;
+	width: auto;
+}
+div
+{
+	border:thin;
+	margin:100px;
+}
+
+body {
+	
+	background-attachment: fixed;
+	background-repeat: repeat;
+	background-position: left top;
+	
+	
+}
+
+</style>
+</head>
+
+
+<body background="../古风背景/20150130101951_wZQkX副本.jpeg" width="800" height="559">
+
+<h1>用户注册</h1>
+<form name="form1" id="p1" action="/getUser" method="get" enctype="mime"-->
+<div class="form_row" id="n1">
+   <p align="left">姓&nbsp;&nbsp;&nbsp;&nbsp;名：
+    <input type="text" class=txt size="24" maxlength="24"
+name="username" required placeholder="请输入昵称" autofocus/>
+  </p>
+
+  <p align="left"> 性&nbsp;&nbsp;&nbsp;别：&nbsp;&nbsp;
+    <input type="radio" name="gender" value="male" size="20" width="20"/>
+      男&nbsp;&nbsp;
+    <input type="radio" name="gender" value="female"/>女</p>
+
+ <p align="left">年&nbsp;&nbsp;&nbsp;&nbsp;龄：
+      <input type="text" class=txt width="30" name="age" size="24"/>
+ </p>
+ <p align="left">用户密码：
+      <input type="password" class=txt name="pswl" required placeholder="请输入密码" size="24"/>
+   </p>
+<p align="left">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：
+  <input type="email" class=txt name="email" size="24" required placeholder="请输入邮箱"/>
+</p>
+<p align="left">职&nbsp;&nbsp;&nbsp;&nbsp;业：
+  <input type="text" class=input1 name="career" size="24" required placeholder="请输入职业">
+  </p>
+<p align="left">我&nbsp;喜&nbsp;欢&nbsp;的&nbsp;书&nbsp;籍&nbsp;类&nbsp;型：<br>
+    
+    <input type="checkbox" name="book" value="book1"/>编程&nbsp;
+    <input type="checkbox" name="book" value="book2"/>小说<br>
+    <input type="checkbox" name="book" value="book3"/>散文&nbsp;
+    <input type="checkbox" name="book" value="book4"/>诗歌<br>
+    <input type="checkbox" name="book" value="book5"/>杂文
+&nbsp;
+    <input type="checkbox" name="book" value="book6"/>传记<br>
+    <input type="checkbox" name="book" value="book7"/>科普
+&nbsp;
+    <input type="checkbox" name="book" value="book8"/>学术
+</p>
+</div>
+<br>
+<p align="center">
+    <input type="checkbox" name="terms" />我同意<a href="#">本网站所有协议内容</a></p>
+<p align="center">
+  <input type="submit" name="submit" value="注  册" class=button />
+  <input type="reset" name="reset" value="清空" class=button />
+</p>
+</form>
+<p align="center"><img src="file:///D|/图片/63a73420d71d6ea49100c1bbadd9217a.gif" width="466" height="184" align="bottom"></p>
+<p><a href="http://www.jjwxc.net/onebook.php?novelid=631005" target="_blank">图片链接</a><p>
+
+</body>
+
+</html>
