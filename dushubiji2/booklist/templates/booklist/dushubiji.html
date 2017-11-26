@@ -43,12 +43,13 @@ body {
 </head>
 
 
-<body background="../古风背景/20150130101951_wZQkX副本.jpeg" width="800" height="559">
+<body background="usedpicture.jpeg" width="800" height="559">
 
 <h1>用户注册</h1>
 <form name="form1" id="p1" action="/getUser" method="post" enctype="mime"-->
 {% csrf_token %}
 <div class="form_row" id="n1">
+{{errors}}
    <p align="left">姓&nbsp;&nbsp;&nbsp;&nbsp;名：
     <input type="text" class=txt size="24" maxlength="24"
 name="username" required placeholder="请输入昵称" autofocus/>
@@ -92,6 +93,7 @@ name="username" required placeholder="请输入昵称" autofocus/>
   <input type="submit" name="submit" value="注  册" class=button />
   <input type="reset" name="reset" value="清空" class=button />
 </p>
+
 </form>
 <p align="center"><img src="file:///D|/图片/63a73420d71d6ea49100c1bbadd9217a.gif" width="466" height="184" align="bottom"></p>
 <p><a href="http://www.jjwxc.net/onebook.php?novelid=631005" target="_blank">图片链接</a><p>

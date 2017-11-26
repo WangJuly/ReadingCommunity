@@ -20,5 +20,7 @@ urlpatterns = [
     #url(r'^$',booklist_views.index),
     url(r'^index$',booklist_views.index,name='index'),
     url(r'^getUser$',booklist_views.getUser,name='getUser'),
+    url(r'^first$',booklist_views.first,name='first'),
+    url(r'^login$',booklist_views.login,name='login'),
     url(r'^admin/', admin.site.urls),
 ]
