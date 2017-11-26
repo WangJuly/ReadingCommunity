@@ -3,9 +3,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>个人笔记界面</title>
-
 <body>
+
 <p style="font-style:italic; color:blue;font-size:20px">
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+我的读书笔记共{{personallength}}篇
+<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -15,35 +20,23 @@
 &nbsp;&nbsp;&nbsp;&nbsp;
 书籍名称 </p>
 <br>
-
 {% for i in personalarticle %}
-
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/Personal">
-{{ i.atitle }}
+<a href="/Personalcontent?id={{i.atitle}}">
+   {{i.atitle}}
 </a>
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-{{i.abookname}}
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;
 
+{{i.abookname}}
 <br>
 
 {% endfor %}
-
-
+<ul><li><a href="/Personal"> 返回我的主页 </a></li></ul>
 </body>
 
 
