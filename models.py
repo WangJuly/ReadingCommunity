@@ -15,10 +15,10 @@ class User(models.Model):
 		return self.uname
 
 class Article(models.Model):
-        atitle=models.CharField(u'笔记标题',max_length=30)
-        aauthor=models.CharField(u'笔记作者',max_length=30)
-        abookname=models.CharField(u'书籍名称',max_length=30)
-        awriter=models.CharField(u'书籍作者',max_length=30)
-        acontent=models.TextField(u'笔记正文',max_length=10000)
-        def __str__(self):
-                return self.atitle
+    atitle=models.CharField(u'笔记标题',max_length=30)
+    aauthor=models.CharField(u'笔记作者',max_length=30)
+    abookname=models.CharField(u'书籍名称',max_length=30)
+    awriter=models.CharField(u'书籍作者',max_length=30)
+    acontent=models.TextField(u'笔记正文',max_length=10000)
+    def __str__(self):
+        return self.atitle
