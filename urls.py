@@ -18,7 +18,7 @@ from django.contrib import admin
 from booklist import views as booklist_views
 urlpatterns = [
     #url(r'^$',booklist_views.index),
-    url(r'index',booklist_views.index,name='index'),
+    url(r'index$',booklist_views.index,name='index'),
     url(r'getUser$',booklist_views.getUser,name='getUser'),
     url(r'first$',booklist_views.first,name='first'),
     url(r'login$',booklist_views.login,name='login'),
@@ -32,5 +32,18 @@ urlpatterns = [
     url(r'Bookarticle$',booklist_views.bookarticle,name='Bookarticle'),
     url(r'Searchcontent$',booklist_views.searchcontent,name='Searchcontent'),
     url(r'Delarticle$',booklist_views.delarticle,name='Delarticle'),
+    url(r'Delstar$',booklist_views.delstar,name='Delstar'),
+    url(r'Delstaruser$',booklist_views.delstaruser,name='Delstaruser'),
+	url(r'Otheruser$',booklist_views.otheruser,name='Otheruser'),
+	url(r'Otherarticle$',booklist_views.otherarticle,name='Otherarticle'),
+	url(r'Othercontent$',booklist_views.othercontent,name='Othercontent'),
+    url(r'Searchstar$',booklist_views.searchstar,name='Searchstar'),
+	url(r'Searchuser$',booklist_views.searchuser,name='Searchuser'),
+    url(r'Otherstar$',booklist_views.otherstar,name='Otherstar'),
+    url(r'Change$',booklist_views.change,name='Change'),
+    url(r'Agreement$',booklist_views.agreement,name='Agreement'),
+	url(r'Staruser$',booklist_views.staruser,name='Staruser'),
+	url(r'Staruserarticle$',booklist_views.staruserarticle,name='Staruserarticle'),
+	url(r'Starusercontent$',booklist_views.starusercontent,name='Starusercontent'),
     url(r'^admin/', admin.site.urls),
 ]

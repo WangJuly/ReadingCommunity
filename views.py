@@ -41,7 +41,7 @@ def login(request):
 #个人界面
 def personal(request):
         username = request.session.get('username')
-        user1=User.objects.get(uname=username)      #将当前用户存入session
+        user1=User.objects.get(uname=username)
         return render(request,'booklist/personal.html',{'username':username,'user1':user1})
  
 
@@ -49,12 +49,12 @@ def personal(request):
 #个人笔记
 def personalarticle(request):
         username=request.session.get('username')
-        personalarticle = Article.objects.filter(aauthor=username)     #当前用户笔记的列表
-        personallength = len(personalarticle)                          #当前用户笔记的列表长度
+        personalarticle = Article.objects.filter(aauthor=username)
+        personallength = len(personalarticle)
         return render(request,'booklist/personalarticle.html',{'personalarticle':personalarticle,'personallength':personallength})
 def personalcontent(request):
-        personalcontent = Article.objects.get(atitle=request.GET['id'])     #获取当前用户笔记的某一标题
-        request.session['title']=personalcontent.atitle                     #将这一标题存入session的title中
+        personalcontent = Article.objects.get(atitle=request.GET['id'])
+        request.session['title']=personalcontent.atitle
         return render(request,'booklist/personalcontent.html',{'personalcontent':personalcontent})
 def delarticle(request):
         aimtitle=request.session.get('title')
@@ -70,11 +70,11 @@ def delarticle(request):
 #收藏的笔记
 def stararticle(request):
         username=request.session.get('username')
-        stararticle = []              #存放Article的列表
-        stararticle1 = Star.objects.filter(suname=username)      #当前用户收藏的笔记列表
+        stararticle = []
+        stararticle1 = Star.objects.filter(suname=username)
         for i in stararticle1:
-                tem = Article.objects.get(atitle = i.stitle)     #通过收藏笔记的标题获得Article对象
-                stararticle.append(tem)                          #将Article对象添加到Article列表中
+                tem = Article.objects.get(atitle = i.stitle)
+                stararticle.append(tem)
         starlength=len(stararticle)
         return render(request,'booklist/stararticle.html',{'stararticle':stararticle,'starlength':starlength})
 def starcontent(request):
