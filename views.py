@@ -41,7 +41,7 @@ def login(request):
 #个人界面
 def personal(request):
         username = request.session.get('username')
-        user1=User.objects.get(uname=username)
+        user1=User.objects.get(uname=username)      #将当前用户存入session
         return render(request,'booklist/personal.html',{'username':username,'user1':user1})
  
 
@@ -49,12 +49,12 @@ def personal(request):
 #个人笔记
 def personalarticle(request):
         username=request.session.get('username')
-        personalarticle = Article.objects.filter(aauthor=username)
-        personallength = len(personalarticle)
+        personalarticle = Article.objects.filter(aauthor=username)     #当前用户笔记的列表
+        personallength = len(personalarticle)                          #当前用户笔记的列表长度
         return render(request,'booklist/personalarticle.html',{'personalarticle':personalarticle,'personallength':personallength})
 def personalcontent(request):
-        personalcontent = Article.objects.get(atitle=request.GET['id'])
-        request.session['title']=personalcontent.atitle
+        personalcontent = Article.objects.get(atitle=request.GET['id'])     #获取当前用户笔记的某一标题
+        request.session['title']=personalcontent.atitle                     #将这一标题存入session的title中
         return render(request,'booklist/personalcontent.html',{'personalcontent':personalcontent})
 def delarticle(request):
         aimtitle=request.session.get('title')
@@ -70,11 +70,11 @@ def delarticle(request):
 #收藏的笔记
 def stararticle(request):
         username=request.session.get('username')
-        stararticle = []
-        stararticle1 = Star.objects.filter(suname=username)
+        stararticle = []              #存放Article的列表
+        stararticle1 = Star.objects.filter(suname=username)      #当前用户收藏的笔记列表
         for i in stararticle1:
-                tem = Article.objects.get(atitle = i.stitle)
-                stararticle.append(tem)
+                tem = Article.objects.get(atitle = i.stitle)     #通过收藏笔记的标题获得Article对象
+                stararticle.append(tem)                          #将Article对象添加到Article列表中
         starlength=len(stararticle)
         return render(request,'booklist/stararticle.html',{'stararticle':stararticle,'starlength':starlength})
 def starcontent(request):
@@ -133,14 +133,7 @@ def otherstar(request):
                 return render(request,'booklist/othercontent.html',{'othercontent':othercontent,'errors':'您已收藏过该笔记'})
 
 
-                #othercontent = Article.objects.get(atitle=request.GET['id'])
-                #request.session['startitle'] = othercontent.atitle
-                #return render(request,'booklist/othercontent.html',{'othercontent':othercontent})
-
-
-
-                #searchcontent=Article.objects.get(atitle=startitle)
-                #return render(request,'booklist/searchcontent.html',{'searchcontent':searchcontent,'errors':'您已收藏过该笔记'})
+             
 
 
 #关注用户
@@ -172,6 +165,8 @@ def searchuser(request):
         else:
                 otheruser = User.objects.filter(uname=susername)
                 return render(request,'booklist/otheruser.html',{'otheruser':otheruser,'errors':'您已关注过该用户'})
+
+
 
 #上传笔记
 def article(request):
@@ -213,16 +208,18 @@ def searchcontent(request):
 
 #搜索用户
 def otheruser(request):
-        otheruser = User.objects.filter(uname=request.GET["othername"])
+        otherusername = request.GET["othername"]
+        otheruser = User.objects.filter(uname=otherusername)
         if len(otheruser)==1:
                 request.session['susername']=otheruser[0].uname
-        return render(request,'booklist/otheruser.html',{'otheruser':otheruser})
+        return render(request,'booklist/otheruser.html',{'otheruser':otheruser,'otherusername':otherusername})
 def otherarticle(request):
-        otherarticle = Article.objects.filter(aauthor=request.GET['id'])
+        otherperson = request.GET['id']
+        otherarticle = Article.objects.filter(aauthor=otherperson)
         otherlength=len(otherarticle)
         if otherlength!= 0:
                 request.session['othername'] = otherarticle[0].aauthor    #将搜索的用户名存入session
-        return render(request,'booklist/otherarticle.html',{'otherarticle':otherarticle,'otherlength':otherlength})
+        return render(request,'booklist/otherarticle.html',{'otherarticle':otherarticle,'otherlength':otherlength,'otherperson':otherperson})
 def othercontent(request):
         othercontent = Article.objects.get(atitle=request.GET['id'])
         request.session['startitle'] = othercontent.atitle
