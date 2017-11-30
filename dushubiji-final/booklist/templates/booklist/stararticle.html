@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索笔记界面</title>
+</head>
+<style>
+
+body{
+	background-position:top;
+	background-repeat:no-repeat;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+p1{
+    font-family:"华文行楷";
+    font-weight: bold;
+    font-size: 40px;
+    text-align:center
+}
+div{
+	border:solid;
+	
+	border-color:#FFFFFF;
+}
+#a1{
+	width:300px;
+	margin:10px 140px;
+}
+
+#a5{
+	width:400px;
+	margin:160px 140px;
+}
+#a6{
+	width:600px;
+	margin:10px 140px;
+}
+
+</style>
+<body background="/static/images/bg5.png" width="900" height="1200">
+
+
+{% if not stararticle %}
+<div id="a5">
+<p1 style="color:#84C1FF" align="center">您还没有收藏的笔记!</p1>
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+
+{% else %}
+<body background="/static/images/bg5.png" width="900" height="1200">
+<p align="center">
+<div id="a6">
+<p style="color:#84C1FF" align="center">我收藏的读书笔记: 共{{starlength}}篇</p>
+<br><br>
+<table width="700">
+<tr>
+<td width="180">
+笔记标题
+</td>
+<td width="180">
+笔记作者
+</td>
+<td width="180">
+书籍名称 
+</td>
+<table  width="700">
+{% for i in stararticle %}
+<tr>
+<td width="180">
+<a href="/Starcontent?id={{i.atitle}}">
+{{i.atitle}}
+</a>
+</td>
+<td width="160">
+{{i.aauthor}}
+</td>
+<td width="160">
+{{i.abookname}}
+</td>
+</tr>
+<br>
+{% if forloop.last %}
+<br><br>
+{% endif %}
+{% endfor %}
+{% endif %}
+</div>
+</table>
+<br>
+<br>
+<br>
+<p align="center" >
+<a href="/Personal?username={{i.aauthor}}">返回我的主页</a></p>
+<br>
+<br>
+</p>
+</body>
+
+</html>

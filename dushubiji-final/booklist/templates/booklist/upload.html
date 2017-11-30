@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>读书笔记上传界面</title>
+<style type="text/css">
+<!--
+.STYLE1 {
+	font-family: "华文行楷";
+	font-size: 25px;
+	color: #000000;
+}
+body {
+	background-image: url(../../static/images/20151026130059_r2juF.thumb.700_0.jpeg);
+}
+.STYLE2{
+	font-family: "华文行楷";
+	font-size: 24px;
+	font-style: normal;
+	line-height: normal;
+  text-decoration: blink;
+	filter: DropShadow(Color=6699cc, OffX=2, OffY=2, Positive=1);
+	color: #000000;
+	font-variant: normal;
+	text-transform: none;
+	word-spacing: normal;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	cursor: auto;
+}
+#flower1 {
+	position:absolute;
+	width:321px;
+	height:189px;
+	z-index:1;
+	left: 28px;
+	top: 58px;
+}
+-->
+</style>
+</head>
+<body>
+<style type="text/css">
+.test_demo_ellipsis{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;width:200px;background:#ccc;}
+</style>
+<form name="upload" id="p2" action="/getArticle" method="get">
+  <bgsound src="D:\The witcher 3\The Witcher 3\Blood and Wine extras\Blood and Wine OST\mp3\01 Blood and Wine.mp3" loop="-1"/>
+     <p align=center style="text-shadow:0.1em 2px 6px grey;front size:80px;> class="STYLE1" size=40> <span class="STYLE1"> {{errors}}
+  <p class="STYLE1" size=40>&nbsp;</p>
+  <p align=center style="text-shadow:0.1em 2px 6px grey;front size:80px;> class="STYLE1" size=40> <span class="STYLE1">笔记标题：
+    <input type="text" name="atitle" size=20 maxlength="30">
+  </span></p>
+  <p align=center class="STYLE1" style="text-shadow :0.1em 2px 6px grey;front size:80px;> class="STYLE1" size=40>书籍名称：
+    <input type="text" name="abookname" size=20 maxlength="30">
+  </p> 
+  <p align=center class="STYLE1" style="text-shadow:0.1em 2px 6px grey;front size:80px;> class="STYLE1" size=40> 书籍作者 ：
+    <input type="text" name="awriter" size=20 maxlength="30" />
+  </p>
+  <span class="STYLE1"><br>
+  </span>
+  <p align=center class="STYLE1" style="text-shadow:0.1em 2px 6px grey;front size:80px;>class="STYLE1" size=40>笔记内容：</p>
+  <p align="center">
+    
+        <span class="STYLE2">
+    <textarea name="acontent" cols="100" rows="40" required placeholder="请直接输入正文">
+        </textarea>
+    <br>
+    <br>
+    <label for="imageField"></label>
+    
+  <input type="submit" name="submit" value="提  交" class=button />
+        </span></p>
+  </form>
+  <ul> 
+    <div align="right"></div>
+    <li>
+      <div align="right" class="STYLE1"><a href="/Personal?username={{username}}"> 返回我的主页 </a></div>
+    </li>
+  </ul>
+  <p align="center">&nbsp;</p>
+</form>
+</body>
+</html>

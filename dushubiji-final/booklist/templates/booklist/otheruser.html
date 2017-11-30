@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+搜索用户界面
+</title>
+</head>
+<style type="text/css">
+body{
+	background-position:top;
+	background-repeat:no-repeat;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div{
+	border:solid;
+	
+	border-color:#FFFFFF;
+}
+</style>
+<body background="/static/images/timg2.png" width="900" height="1200">
+{{errors}}<br>
+<form name="input" action="/Otheruser" method="get">
+    <p align="right" size=40> 
+    <input type="text" name="othername" size=20 maxlength="30"  required placeholder="请输入用户的名字">
+    <input type="submit" name="submit" value="搜索" class=button />
+    </p>
+</form>
+
+<p style="font-style:italic; color:blue;font-size:20px">
+{% if not otheruser%}
+<div>
+<h1>抱歉没有这个用户</h1>
+{% else %}
+</div>
+<div>
+<h2>成功搜索到名为{{otherusername}}的用户</h2>
+</div>
+<br>
+<table width="1000">
+<tr>
+<td width="240">
+用户昵称
+</td>
+<td width="180">
+用户性别
+</td>
+<td width="180">
+用户年龄
+</td>
+</tr>
+</table>
+</p>
+<table width="1000">
+{% for i in otheruser %}
+<tr>
+<td width="240">
+{{i.uname}}
+</td>
+<td width="180">
+{{i.ugender}}
+</td>
+<td width="180">
+{{i.uage}}
+</td>
+</tr>
+</table>
+&nbsp;&nbsp;
+<a href="/Otherarticle?id={{i.uname}}">
+<br>
+他/她的笔记
+</a>
+
+<br>
+<br>
+{% if forloop.last %}
+<form name="form2" action="/Searchuser" method="get" enctype="mime"-->
+{% csrf_token %}
+<input type="submit" value="关注" name="submit" >
+</form>
+{% endif %}
+{% endfor %}
+{% endif %}
+<br>
+<br>
+<p align="center">
+<a href="/Personal">返回我的主页</a>
+</p>
+<br>
+<br>
+
+</body>
+</html>

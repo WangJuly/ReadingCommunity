@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户笔记正文</title>
+</head>
+<style type="text/css">
+body {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div
+{
+	border:solid;
+	width:1000px;
+	margin:10px 100px;
+	border-color:#FFFFFF;
+}
+</style>
+<body background="/static/images/timg2.png";>
+	{{errors}}
+	<br>
+<div>
+<p style="font-style:italic; color:blue;font-size:20px">
+<table width="1000">
+<tr>
+<td width="240">
+笔记标题
+</td>
+<td>
+笔记作者
+</td>
+<td>
+书籍作者
+</td>
+<td>
+书籍名称
+</td>
+</tr>
+</table>
+ </p>
+<br>
+<table width="1000">
+<tr>
+<td width="240">
+{{ othercontent.atitle }}
+</td>
+<td>
+{{othercontent.aauthor}}
+</td>
+<td>
+{{othercontent.awriter}}
+</td>
+<td>
+{{othercontent.abookname}}
+</td>
+</tr>
+</table>
+<br>
+<br>
+<p style="font-style:italic; color:blue;font-size:20px">
+<br>
+笔记正文
+ </p>
+<br>
+{{othercontent.acontent}}
+
+<br>
+
+
+<form name="form1" id="p1" action="/Otherstar" method="get" enctype="mime"-->
+{% csrf_token %}
+<input type="submit" value="收 藏" name="submit" >
+</form>
+</div>
+<br>
+
+&nbsp;&nbsp;&nbsp;
+<a href="/Otherarticle?id={{othercontent.aauthor}}"> 返回</a>
+
+
+
+</body>
+
+
+
+</html>

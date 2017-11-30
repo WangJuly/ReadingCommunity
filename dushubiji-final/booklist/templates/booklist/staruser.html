@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+我关注的用户
+</title>
+<style>
+body{
+	background-position:top;
+	background-repeat:no-repeat;
+	font-family: "华文行楷";
+	font-size:20px;
+	
+}
+</style>
+<link href="../../static/css/style2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body background="/static/images/bg5.png" width="900" height="1200" class="style2">
+<form name="input" action="/Otheruser" method="get">
+    <p align="right" size=40> 
+    <input type="text" name="othername" size=20 maxlength="30"  required placeholder="请输入用户的名字">
+    <input type="submit" name="submit" value="搜索" class=button />
+    </p>
+</form>
+
+<p style="font-style:italic; color:blue;font-size:20px">
+{% if not staruser%}
+<h1>您还没有关注的用户</h1>
+{% else %}
+我关注的用户共{{starlength}}位
+<br>
+<br>
+<table width="740">
+<tr>
+<td width="180">
+用户昵称
+</td>
+<td width="160">
+用户性别
+</td>
+<td width="160">
+用户年龄
+</td>
+</tr>
+</table>
+</p>
+<table width="1000">
+{% for i in staruser %}
+<tr>
+<td width="220">
+{{i.uname}}
+</td>
+<td width="160">
+{{i.ugender}}
+</td>
+<td width="160">
+{{i.uage}}
+</td>
+<td width="220">
+<a href="/Staruserarticle?id={{i.uname}}">
+他/她的笔记
+
+</a>
+</td>
+</tr>
+<br>
+<br>
+{% endfor %}
+{% endif %}
+</table>
+<br>
+<br>
+<br>
+<br>
+</form>
+<p align="center">
+<a href="/Personal">返回我的主页</a></p>
+<br>
+<br>
+
+</body>
+</html>

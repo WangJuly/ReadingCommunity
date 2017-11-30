@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索笔记界面</title>
+<style>
+body {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div
+{
+	border:solid;
+	width:650px;
+	margin:10px 140px;
+	border-color:#FFFFFF;
+}
+</style>
+</head>
+<body background= "/static/images/bg1.png">
+	{{errors}}
+	<br>
+<p style="font-style:italic; color:blue;font-size:20px">
+<table width="800">
+<tr>
+<td width="280">
+笔记标题
+</td>
+<td width="180">
+笔记作者
+</td>
+<td width="180">
+书籍作者
+</td>
+<td width="280">
+书籍名称
+</td>
+</tr>
+</table>
+ </p>
+<br>
+
+
+
+<table width="800">
+<tr>
+<td width="280">
+{{ searchcontent.atitle }}
+</td>
+<td width="280">
+{{searchcontent.aauthor}}
+</td>
+<td width="280">
+{{searchcontent.awriter}}
+</td>
+<td width="280">
+{{searchcontent.abookname}}
+</td>
+</tr>
+</table>
+<br>
+<br>
+<p style="font-style:italic; color:blue;font-size:20px">
+<br>
+<br>
+笔记正文
+ </p>
+<br>
+<br>
+{{searchcontent.acontent}}
+
+<br>
+<br>
+<br>
+
+<form name="form1" id="p1" action="/Searchstar" method="get" enctype="mime"-->
+{% csrf_token %}
+<input type="submit" value="收 藏" name="submit" >
+</form>
+
+<br>
+<br>
+<br>
+<a href="/Bookarticle?bbookname={{searchcontent.abookname}}"> 返回</a>
+
+
+
+</body>
+
+
+
+</html>

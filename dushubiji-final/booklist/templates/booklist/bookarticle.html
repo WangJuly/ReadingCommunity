@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+搜索书籍笔记界面
+</title>																		
+</head>
+<style>
+
+body{
+	background-position:top;
+	background-repeat:no-repeat;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div{
+	border:solid;
+	
+	border-color:#FFFFFF;
+}
+#a3{
+	width:300px;
+	margin:10px;
+}
+#a4{
+	width:1000px;
+	margin:10px 70px;
+}
+
+</style>
+
+<body background="/static/images/bg1.png" >
+
+<form name="input" action="/Bookarticle" method="get">
+    <p align="right" size=40> 
+    <input type="text" name="bbookname" size=20 maxlength="30"  required placeholder="请输入书的名字">
+    <input type="submit" name="submit" value="搜索" class=button />
+    </p>
+</form>
+
+{% if not bookarticle %}
+   <br>
+   <br>
+   <div id="a3">
+   <h1 style="color:#84C1FF" align="center">抱歉，这本书还没有笔记</h1>
+   </div>
+{% else %}
+
+<h2>这本书的读书笔记共有{{booklength}}篇</h2>
+<div id="a4">
+<p style="font-style:italic; color:blue;font-size:20px">
+
+<table width="1000">
+<tr>
+<td width="240">
+书籍名称
+</td>
+<td width="180">
+作者
+</td>
+<td width="280">
+笔记标题
+</td>
+<td width="200">
+笔记作者
+</td>
+</tr>
+</table>
+</p>
+<table width="1000">
+{% for i in bookarticle %}
+<tr>
+<td width="240">
+{{i.abookname}}
+</td>
+<td width="180">
+{{i.awriter}}
+</td>
+<td width="280">
+<a href="/Searchcontent?id={{i.atitle}}">
+   {{i.atitle}}
+</a>
+</td>
+<td width="200">
+{{i.aauthor}}
+</td>
+</tr>
+<br>
+<br>
+{% endfor %}
+{% endif %}
+</table>
+</div>
+<br>
+<br>
+<br>
+<br>
+<a href="/Personal">返回我的主页</a>
+<br>
+<br>
+
+</body>
+</html>
