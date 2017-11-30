@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+
+body{
+	background-image:url(bg5.png);
+	background-position:top;
+	background-repeat:no-repeat;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div{
+	border:solid;
+	
+	border-color:#FFFFFF;
+}
+#a3{
+	width:300px;
+	margin:10px;
+}
+#a4{
+	width:600px;
+	margin:10px 140px;
+}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人笔记界面</title>
+
+<body background="bg5.png" width="900" height="1200">
+{% if not personalarticle %}
+<div id="a3">
+<p style="color:#84C1FF" align="center">&nbsp;&nbsp;&nbsp;&nbsp;您还没有上传读书笔记</p>
+</div>
+{% else %}
+<p align="center">
+<div id="a4">
+<p style="color:#84C1FF" align="center">我的读书笔记共{{personallength}}篇</p>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+笔记标题
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+书籍名称 </p>
+<br>
+{% for i in personalarticle %}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/Personalcontent?id={{i.atitle}}">
+   {{i.atitle}}
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+{{i.abookname}}
+<br>
+
+{% endfor %}
+{% endif %}
+</div>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<ul><li><a align="center" href="/Personal"> 返回我的主页 </a></li></ul>
+</body>
+
+
+</head>
+
+</html>
+

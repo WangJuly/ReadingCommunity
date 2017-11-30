@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>搜索笔记界面</title>
+<style>
+
+body{
+	background-image:url(bg5.png);
+	background-position:top;
+	background-repeat:no-repeat;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div{
+	border:solid;
+	
+	border-color:#FFFFFF;
+}
+#a5{
+	width:300px;
+	margin:10px;
+}
+#a6{
+	width:600px;
+	margin:10px 140px;
+}
+
+</style>
+
+<body background="bg5.png" width="900" height="1200">
+{% if not stararticle %}
+<div id="a5">
+<p style="color:#84C1FF" align="center">您还没有收藏的笔记</p>
+<br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/Personal">返回我的主页</a>
+
+
+
+{% else %}
+<p align="center">
+<div id="a6">
+<p style="color:#84C1FF" align="center">我收藏的读书笔记共{{starlength}}篇</p>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+笔记标题
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+笔记作者
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+书籍名称 </p>
+<br>
+{% for i in stararticle %}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/Starcontent?id={{i.atitle}}">
+{{i.atitle}}
+</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+{{i.aauthor}}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+{{i.abookname}}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+<br>
+{% if forloop.last %}
+<br><br>
+</div>
+<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a align="center" href="/Personal?username={{i.aauthor}}">返回</a>
+{% endif %}
+
+{% endfor %}
+{% endif %}
+
+
+
+</head>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>收藏笔记界面</title>
+<style>
+body {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+div
+{
+	border:solid;
+	width:650px;
+	margin:10px 140px;
+	border-color:#FFFFFF;
+}
+</style>
+
+
+<body background="bg5.png" width="900" height="1200">
+<br><br><br>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+笔记标题
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+笔记作者
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+书籍作者
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+书籍名称
+
+ </p>
+<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+{{ starcontent.atitle }}
+&nbsp;&nbsp;&nbsp;&nbsp;	
+&nbsp;&nbsp;	
+
+{{starcontent.aauthor}}
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+
+{{starcontent.awriter}}
+&nbsp;&nbsp;&nbsp;&nbsp;	
+&nbsp;&nbsp;	
+
+{{starcontent.abookname}}
+
+<br><br><br>
+
+
+<br>
+<div>
+<hr width=600 color=#E0E0E0 align="left" noshade="noshade"/>
+
+<p align="center" style="color:#84C1FF"><strong>笔记正文</strong></p>
+<br>
+{{starcontent.acontent}}
+
+<br>
+<br>
+<br>
+<a href="/Stararticle?username={{starcontent.aauthor}}"> 返回</a>
+
+
+
+</body>
+
+
+</head>
+
+</html>

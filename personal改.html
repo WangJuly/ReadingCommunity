@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户主页面</title>
+
+<style>
+body {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top;
+	font-family: "华文行楷";
+	font-size:20px;
+}
+
+#p1 {
+	color:#84C1FF;
+}
+div
+{
+	border:solid;
+	
+	
+}
+#a1
+{
+	width:240px;
+	margin:40px 240px;
+	border-color:#D2E9FF;
+	border-radius:5px;
+}
+#a2
+{
+	width:240px;
+	margin:10px 140px;
+	border-color:#FFFFFF;
+}
+</style>
+
+<body background="bg5.png" width="900" height="1200">
+{{username}},欢迎！
+<hr width=4000 color=#E0E0E0 size=2 align="left"/>
+
+
+<div class="form_row" id="a1">
+
+<p id="p1" align="center">想搜什么？</p>
+<form name="input" action="/Bookarticle" method="get" >
+    <p align="center" size=40> 
+    <input type="text" name="bbookname" size=20 maxlength="30"  required placeholder="请输入书的名字">
+    <input type="submit" name="submit" value="搜索" class=button style="width: 45px; height: 25px; border-radius:3px"/>
+    </p>
+</form>
+<form name="input" action="/Otheruser" method="get">
+    <p align="center" size=40> 
+    <input type="text" name="othername" size=20 maxlength="30"  required placeholder="请输入用户的名字">
+    <input type="submit" name="submit" value="搜索" class=button style="width: 45px; height: 25px; border-radius:3px"/></p>
+</form>
+<br><br>
+</div>
+
+
+<div class="form_row" id="a2">
+<hr width=270 align="left" noshade="noshade">
+<p>用户姓名:{{username}}</p>
+<ul><li><a href="/Personalarticle"> 我的读书笔记</a></li></ul>
+<ul><li><a href=""> 我关注的用户</a></li></ul>
+<ul><li><a href="Stararticle?username={{username}}"> 我收藏的笔记</a></li></ul>
+<ul><li><a href="/Article?username={{username}}"> 添加新的读书笔记 </a></li></ul>
+<hr width=270 align="left" noshade="noshade">
+</div>
+
+</body>
+
+</head>
+
+</html>
