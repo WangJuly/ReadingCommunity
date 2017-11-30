@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+书籍笔记界面</title>
+<style type="text/css">
+<!--
+body {
+	background-image: url(../../static/images/14b2OOOPICea_10245.jpg);
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+@import url("../../static/css/style.css");
+.STYLE11 {font-size: 36px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; cursor: text; filter: Gray; font-family: "叶根友毛笔行书2.0版";}
+.STYLE15 {color: #508B6D}
+.STYLE17 {color: #22A466}
+#Layer1 {
+	position:absolute;
+	width:248px;
+	height:115px;
+	z-index:1;
+	left: 1259px;
+	top: 772px;
+}
+.STYLE18 {color: #990066}
+.STYLE19 {font-size: 36px; font-style: normal; line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; cursor: text; filter: Gray; font-family: "叶根友毛笔行书2.0版"; color: #0000FF; }
+#Layer2 {
+	position:absolute;
+	width:174px;
+	height:63px;
+	z-index:2;
+	left: 173px;
+	top: 490px;
+}
+#Layer3 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:3;
+	left: 0px;
+	top: 108px;
+}
+#Layer4 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:4;
+	left: 0px;
+	top: 220px;
+}
+#Layer5 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 0px;
+	top: 92px;
+}
+.STYLE20 {color: #0000FF}
+.STYLE21 {
+	color: #0000FF;
+	font-family: "叶根友毛笔行书2.0版";
+	font-size: 36px;
+}
+.STYLE22 {font-size: 36px}
+.STYLE23 {color: #0000FF; font-size: 36px; }
+.STYLE24 {font-family: "叶根友毛笔行书2.0版"; color: #990066;}
+.STYLE25 {font-family: "叶根友毛笔行书2.0版"}
+.STYLE26 {font-family: "叶根友毛笔行书2.0版"; color: #0000FF; }
+-->
+</style>
+</head>
+
+<body>
+
+<form action="/Bookarticle" method="get" name="input" class="style8">
+    <p align="right" size=40> 
+    <input name="bbookname" type="text" class="style8" size=20 maxlength="30"  required placeholder="请输入书的名字">
+    <input type="submit" name="submit" value="搜索" class=style8 />
+    </p>
+</form>
+<div align="right"><br>
+  <span class="STYLE15"><br>
+  <span class="STYLE19">{% if not bookarticle %}</span></span></div>
+<h1 align="left" class="style8 STYLE20">抱歉，这本书还没有笔记</h1>
+<div align="right" class="STYLE20">
+  <div align="left"><span class="STYLE11">{% else %}</span></div>
+</div>
+<h2 align="left" class="style8 STYLE20">读书笔记{{booklength}}篇<span class="STYLE11">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;</span></h2>
+
+<div class="STYLE20" id="Layer2">
+  <p align="left" style="font-style:italic;font-size:20px"><span class="STYLE11"> 书籍名称    &nbsp;</span></p>
+  <div id="Layer3"><span style="font-style:italic;font-size:20px"><span class="STYLE11">作者</span></span></div>
+  <div id="Layer4"><span style="font-style:italic;font-size:20px"><span class="STYLE11"> 笔记标题 </span> </span>
+    <div id="Layer5"><span style="font-style:italic;font-size:20px"><span class="STYLE11">笔记作者</span></span></div>
+  </div>
+  <p align="left" style="font-style:italic;font-size:20px">&nbsp;</p>
+</div>
+<p align="left" style="font-style:italic; color:#0000FF;font-size:20px">&nbsp;</p>
+<div align="left">
+  <p align="center" class="style8">{% for i in bookarticle %}  </p>
+  <p align="center" class="style8">{{i.abookname}} </p>
+  <p align="center" class="style8">{{i.awriter}} </p>
+  <p align="center" class="style8"><a href="/Searchcontent?id={{i.atitle}}">{{i.atitle}}</a></p>
+  <p align="center"><span class="style8">{{i.aauthor}} <br>
+      <br>
+    {% endfor %}
+    {% endif %} <br>
+    </span><span class="style8 STYLE17"><br>
+    <br>
+    <br>
+    </span>  </p>
+  <div id="Layer1"><span class="style8 STYLE17"><a href="/Personal">返回我的主页</a></span></div>
+  <span class="style8"><br>
+  <br>
+  </span></div>
+</body>
+</html>

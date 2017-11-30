@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+其他用户的笔记</title>
+<style type="text/css">
+<!--
+@import url("*");
+@import url("style.css");
+@import url("../../static/css/style.css");
+body {
+	background-image: url(../../static/images/14b2OOOPICea_10245.jpg);
+}
+.STYLE9 {font-size: 24px}
+.STYLE11 {
+	font-size: 24px;
+	font-family: "叶根友毛笔行书2.0版";
+	color: #000099;
+}
+.STYLE12 {color: #000099}
+.STYLE13 {line-height: normal; font-weight: bold; font-variant: normal; text-transform: none; cursor: text; filter: Gray; font-family: "叶根友毛笔行书2.0版"; font-style: normal;}
+.STYLE15 {color: #000099; font-size: 20px; }
+-->
+</style>
+</head>
+
+<body>
+<span class="style8">{% if not otherarticle %}</span>
+<h1 class="style8">抱歉，这个用户还没有笔记</h1>
+<span class="style8"><br>
+</span><span class="STYLE15"><a href="/Personal">返回我的主页 </a>
+{% else %}</span>
+<h2 class="style8">&nbsp;</h2>
+<h2 class="style8">读书笔记{{otherlength}}篇</h2>
+<p style="font-style:italic; color:blue;font-size:20px">
+
+  <span class="STYLE9"><span class="STYLE12"><span class="STYLE13">书 籍 名 称
+&nbsp;
+&nbsp;&nbsp;
+ &nbsp;  &nbsp;   &nbsp;  &nbsp;
+作 者   
+  &nbsp;    &nbsp;   &nbsp;     &nbsp;       
+笔 记 标 题 
+&nbsp;&nbsp;   &nbsp;&nbsp;
+ &nbsp;&nbsp; 笔</span></span><span class="STYLE11">记作者</span></span></p>
+<p>{% for i in otherarticle %}
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p><span class="STYLE13">{{i.abookname}}
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;
+  {{i.awriter}}
+  &nbsp;&nbsp; &nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;<a href="/Othercontent?id={{i.atitle}}">
+    {{i.atitle}}</a> &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp; &nbsp;{{i.aauthor}} </span><br>
+  <br>
+  {% if forloop.last %} <br>
+  <br>
+  <br>
+  <br>
+  <a href="/Otheruser?othername={{i.aauthor}}" class="STYLE15">返回</a> {% endif %}
+  {% endfor %}
+  {% endif %} <br>
+  <br>
+</p>
+</body>
+</html>
